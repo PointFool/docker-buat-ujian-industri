@@ -60,6 +60,7 @@ read -p "pilih -> " wh
 echo ""
 echo "isi Formulir duls gan :'v"
 echo "*isi yang perlu aja"
+echo ""
 read -p "Nama (web & wp) -> " nama
 read -p "Password database (db) -> " pass
 read -p "Nama image Ex. john:1.0 (web) -> " namaimage
@@ -93,8 +94,8 @@ case $wh in
 	docker run --name $nama\_db -e MYSQL_ROOT_PASSWORD=$pass --network network_$nama -d mysql
 	echo "done"
 	sleep 2
-	echo "bikin database nya manual ya :'v"
-	echo "nama database : " $nama\_db
+	echo "bikin databasenya manual ya :'v"
+	echo "Nama : " $nama\_db
 ;;
 
 3)
