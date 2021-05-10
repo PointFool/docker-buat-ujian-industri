@@ -59,12 +59,12 @@ echo ""
 read -p "pilih -> " wh
 echo ""
 echo "isi Formulir duls gan :'v"
-echo ""
-read -p "Nama -> " nama
-read -p "Password database -> " pass
-read -p "Nama image Ex. john:1.0 -> " namaimage
-read -p "Port Web -> " portweb
-read -p "port Wordpress -> " portwp
+echo "*isi yang perlu aja"
+read -p "Nama (web & wp) -> " nama
+read -p "Password database (db) -> " pass
+read -p "Nama image Ex. john:1.0 (web) -> " namaimage
+read -p "Port Web (web) -> " portweb
+read -p "port Wordpress (wp) -> " portwp
 echo ""
 clear
 sleep 2
