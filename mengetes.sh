@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$path="$HOME/"
+$path="$HOME"
 echo " ====WELCOME===="
 echo ""
 echo "  Script Docker"
@@ -66,7 +66,7 @@ case $wh in
 	sleep 2
 	echo "Bikin Folder"
 	mkdir $path/$nama\_web
-	cd $nama\_web
+	cd $path/$nama\_web
 	sleep 2
 	echo "bikin Dockerfile"
 	echo "FROM httpd:latest" >> Dockerfile
