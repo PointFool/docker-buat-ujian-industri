@@ -59,12 +59,14 @@ case $wh in
 3)
 	echo "Bikin Web"
 	sleep 2
-	echo "pull httpd"
+	echo "Download httpd"
 	docker pull httpd
 	echo "done"
 	sleep 2
 	echo "Bikin Folder"
 	mkdir $nama\_web
+	cd $nama\_web
+	echo "done"
 	sleep 2
 	echo "bikin Dockerfile"
 	echo "FROM httpd:latest" >> Dockerfile
