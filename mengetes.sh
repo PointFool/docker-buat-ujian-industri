@@ -1,5 +1,7 @@
 #!/bin/bash
 
+docker="curl -L get.docker.com -o docker.sh"
+
 #mengecek ngecek
 
 echo "Tes internet"
@@ -71,7 +73,8 @@ case $wh in
 
 1)
 	echo "Install Docker"
-	curl -L get.docker.com -o docker.sh && sh docker.sh
+	$docker
+	sh docker.sh
 	echo " Done "
 	sleep 2
 ;;
