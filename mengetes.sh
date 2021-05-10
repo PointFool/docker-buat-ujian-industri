@@ -45,11 +45,11 @@ case $wh in
 	echo "done"
 	sleep 2
 	echo "Buat container Wordpress"
-	docker run --name $nama\_wp -p $portwp:80 --network network_$nama -d wordpress:latest
+	docker run --name $nama\_wp -p $portwp:80 --network network_$nama -d wordpress
 	echo "done"
 	sleep 2
 	echo "Buat container Database"
-	docker run --name $nama\_db -e MYSQL_ROOT_PASSWORD=$pass --network network_$nama -d mysql:latest
+	docker run --name $nama\_db -e MYSQL_ROOT_PASSWORD=$pass --network network_$nama -d mysql
 	echo "done"
 	sleep 2
 	echo "bikin database nya manual ya :'v"
