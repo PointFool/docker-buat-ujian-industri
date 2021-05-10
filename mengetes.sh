@@ -25,7 +25,7 @@ read -p "Password database -> " pass
 read -p "Nama image Ex. john:1.0 -> " namaimage
 read -p "Port Web -> " portweb
 read -p "port Wordpress -> " portwp
-echo""
+echo ""
 clear
 sleep 2
 
