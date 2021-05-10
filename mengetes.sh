@@ -113,7 +113,7 @@ case $wh in
 	echo "FROM httpd:latest" >> Dockerfile
 	echo "COPY . /usr/local/apache2/htdocs/" >> Dockerfile
 	sleep 2	
-	echo "index.html"
+	echo "Bikin index.html"
 	echo "BERHASIL GAN!!" >> index.html
 	sleep 2
 	echo "Build image"
@@ -125,6 +125,7 @@ case $wh in
 	echo "start container"
 	docker start $nama\_web
 	echo "done"
+	sleep 2
 ;;
 
 *)
