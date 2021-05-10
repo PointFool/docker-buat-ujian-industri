@@ -120,7 +120,7 @@ case $wh in
 	docker build -t $namaimage .
 	sleep 2
 	echo "Bikin container web" 
-	docker create --name $nama\_web -p $portweb:80 $nama:1.0
+	docker create --name $nama\_web -p $portweb:80 $namaimage
 	sleep 2
 	echo "start container"
 	docker start $nama\_web
