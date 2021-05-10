@@ -33,7 +33,7 @@ case $wh in
 
 1)
 	echo "Install Docker"
-	curl get.docker.com -o docker.sh
+	curl -L get.docker.com -o docker.sh
 	sh docker.sh
 	echo " Done "
 	sleep 2
