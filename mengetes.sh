@@ -1,5 +1,44 @@
 #!/bin/bash
 
+#mengecek ngecek
+
+echo "Tes internet"
+ping -c 1 google.com > /dev/null 2>&1
+  if [ "$?" != 0 ];
+
+then
+
+    echo [x]-[WADOOO]: Nyambung inet duls gan!!!;
+    sleep 1
+    
+else
+
+    echo [✔]-[Internet Connection]: MANTAP!;
+    sleep 1
+fi
+
+echo ""
+echo "curl"
+which curl > /dev/null 2>&1
+      if [ "$?" -eq "0" ]; 
+
+then
+
+      echo [✔]-[curl]: MANTAP!;
+
+else
+
+   echo [x]-[WADOOO]: butuh curl gan!!!;
+   echo ""
+   echo [!]-[bentar]: Tungguin;
+   apt update
+   apt install curl -y
+   echo ""
+   sleep 1
+fi
+sleep 2
+clear
+
 echo " ====WELCOME===="
 echo ""
 echo "  Script Docker"
