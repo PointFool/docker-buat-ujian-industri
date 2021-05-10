@@ -4,6 +4,8 @@ echo " ====WELCOME===="
 echo ""
 echo "  Script Docker"
 echo "  Ujian industri"
+echo "   by : saddam"
+echo ""
 echo " ==============="
 echo ""
 
