@@ -3,7 +3,6 @@
 #variabel
 
 docker="curl -L get.docker.com -o docker.sh"
-ip="hostname -I"
 
 #mengecek ngecek
 
@@ -118,8 +117,6 @@ case $wh in
 	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
 	sleep 2
-	echo "akses :" $ip:$portwp
-	echo ""
 ;;
 
 3)
@@ -159,8 +156,6 @@ case $wh in
 	echo "done"
 	sleep 2
 	clear
-	echo "akses :" $ip:$portweb
-	echo ""
 	
 ;;
 
