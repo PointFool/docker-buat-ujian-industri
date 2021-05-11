@@ -3,8 +3,9 @@
 #variabel
 
 docker="curl -L get.docker.com -o docker.sh"
-host=127.0.0.1
-username=root
+host1="127.0.0.1"
+host2="0.0.0.0"
+username="root"
 
 #mengecek ngecek
 
@@ -109,8 +110,9 @@ case $wh in
 	docker stop $nama\_db
 	docker start $nama\_db
 	sleep 2
-	docker exec -it $nama\_db mysql -h $host -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
-	echo "done"
+	docker exec -it $nama\_db mysql -h $host1 -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
+	docker exec -it $nama\_db mysql -h $host2 -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
+	echo "Masih beta :'v"
 	sleep 2
 ;;
 
