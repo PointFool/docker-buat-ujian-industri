@@ -64,15 +64,15 @@ echo ""
 echo "isi Formulir duls gan :'v"
 echo "*isi yang perlu aja"
 echo ""
-echo "Wordpress & Database"
-echo "--------------------"
+echo "Wordpress & Database (*untuk nomor 2 saja)"
+echo "-------------------------------------------"
 read -p "Nama -> " namawp
 read -p "Password database -> " pass
 read -p "Nama Database -> " namadb
 read -p "port Wordpress -> " portwp
 echo ""
-echo "        Web"
-echo "--------------------"
+echo "        Web (*untuk nomor 3 saja)"
+echo "-------------------------------------------"
 read -p "Nama -> " namaweb
 read -p "Nama image Ex. john:1.0 -> " namaimage
 read -p "Port Web -> " portweb
