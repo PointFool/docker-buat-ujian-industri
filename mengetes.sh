@@ -65,12 +65,16 @@ echo ""
 echo "isi Formulir duls gan :'v"
 echo "*isi yang perlu aja"
 echo ""
-read -p "Nama (web & wp) -> " nama
-read -p "Password database (db) -> " pass
-read -p "Nama Database (db) -> " namadb
-read -p "Nama image Ex. john:1.0 (web) -> " namaimage
-read -p "Port Web (web) -> " portweb
-read -p "port Wordpress (wp) -> " portwp
+echo "Wordpress & Database"
+read -p "Nama -> " namawp
+read -p "Password database -> " pass
+read -p "Nama Database -> " namadb
+read -p "port Wordpress -> " portwp
+echo ""
+echo "Web"
+read -p "Nama -> " namaweb
+read -p "Nama image Ex. john:1.0 -> " namaimage
+read -p "Port Web -> " portweb
 echo ""
 clear
 sleep 2
@@ -89,24 +93,24 @@ case $wh in
 	echo "Wordpress & Database"
 	echo ""
 	echo "Buat Network"
-	docker network create network_$nama
+	docker network create network_$namawp
 	echo "done"
 	sleep 2
 	echo ""
 	echo "Buat container Wordpress"
-	docker run --name $nama\_wp -p $portwp:80 --network network_$nama -d wordpress
+	docker run --name $namawp\_wp -p $portwp:80 --network network_$namawp -d wordpress
 	echo "done"
 	sleep 2
 	echo ""
 	echo "Buat container Database"
-	docker run --name $nama\_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=$pass --network network_$nama -d mysql
+	docker run --name $namawp\_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=$pass --network network_$namawp -d mysql
 	echo "done"
 	sleep 2
 	echo ""
 	echo "Bikin Databasenya gan :'v"
 	echo " wait"
 	sleep 70
-	docker exec -it $nama\_db mysql -h 127.0.0.1 -P 3306 -u root -p$pass -e "CREATE DATABASE "$namadb";"
+	docker exec -it $namawp\_db mysql -h 127.0.0.1 -P 3306 -u root -p$pass -e "CREATE DATABASE "$namadb";"
 	echo ""
 	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
@@ -123,8 +127,8 @@ case $wh in
 	sleep 2
 	echo ""
 	echo "Bikin Folder"
-	mkdir $nama\_web
-	cd $nama\_web/
+	mkdir $namaweb\_web
+	cd $namaweb\_web/
 	echo "done"
 	sleep 2
 	echo ""
@@ -142,11 +146,11 @@ case $wh in
 	sleep 2
 	echo ""
 	echo "Bikin container web" 
-	docker create --name $nama\_web -p $portweb:80 $namaimage
+	docker create --name $namaweb\_web -p $portweb:80 $namaimage
 	sleep 2
 	echo ""
 	echo "start container"
-	docker start $nama\_web
+	docker start $namaweb\_web
 	echo "done"
 	sleep 2
 ;;
