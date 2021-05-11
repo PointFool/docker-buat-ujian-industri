@@ -105,7 +105,7 @@ case $wh in
 	sleep 2
 	echo ""
 	echo "Bikin Databasenya gan :'v"
-	docker exec -it $nama\_db mysql -h$host -uusername -p$pass -e "CREATE DATABASE "$namadb";"
+	docker exec -it $nama\_db mysql -h$host -u$username -p$pass -e "CREATE DATABASE "$namadb";"
 	echo "done"
 	sleep 2
 ;;
