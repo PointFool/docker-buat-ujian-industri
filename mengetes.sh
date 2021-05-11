@@ -161,7 +161,7 @@ case $wh in
 	sleep 2
 	clear
 	echo "Akses :" 
-	$ip4:$portweb
+	/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1:$portweb
 	echo ""
 	
 ;;
