@@ -6,6 +6,7 @@ docker="curl -L get.docker.com -o docker.sh"
 host1="127.0.0.1"
 host2="0.0.0.0"
 username="root"
+q="mysql"
 
 #mengecek ngecek
 
@@ -106,8 +107,9 @@ case $wh in
 	sleep 2
 	echo ""
 	echo "Bikin Databasenya gan :'v"
-	sudo docker exec -it $nama\_db mysql -h $host1 -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
-	sudo docker exec -it $nama\_db mysql -h $host2 -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
+	sudo docker exec -it $nama\_db $q -h $host1 -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
+	sudo docker exec -it $nama\_db $q -h $host2 -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
+	echo ""
 	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
 	sleep 2
