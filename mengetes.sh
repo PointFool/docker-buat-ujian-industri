@@ -1,6 +1,10 @@
 #!/bin/bash
 
+#variabel
+
 docker="curl -L get.docker.com -o docker.sh"
+host="127.0.0.1"
+username="root"
 
 #mengecek ngecek
 
@@ -64,6 +68,7 @@ echo "*isi yang perlu aja"
 echo ""
 read -p "Nama (web & wp) -> " nama
 read -p "Password database (db) -> " pass
+read -p "Nama Database (db) -> " namadb
 read -p "Nama image Ex. john:1.0 (web) -> " namaimage
 read -p "Port Web (web) -> " portweb
 read -p "port Wordpress (wp) -> " portwp
@@ -99,8 +104,9 @@ case $wh in
 	echo "done"
 	sleep 2
 	echo ""
-	echo "bikin databasenya manual ya :'v"
-	echo "Nama : " $nama\_db
+	echo "Bikin Databasenya gan :'v"
+	docker exec -it $nama\_db mysql -h$host -uusername -p$pass -e "CREATE DATABASE "$namadb";"
+	echo "done"
 	sleep 2
 ;;
 
