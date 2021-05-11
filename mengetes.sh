@@ -3,7 +3,7 @@
 #variabel
 
 docker="curl -L get.docker.com -o docker.sh"
-ip4="/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1"
+ip4="ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}'"
 
 #mengecek ngecek
 
@@ -160,8 +160,7 @@ case $wh in
 	echo "done"
 	sleep 2
 	clear
-	echo "Akses :" 
-	/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1\ :$portweb
+	echo "Akses : $ip4:$portweb" 
 	echo ""
 	
 ;;
