@@ -4,6 +4,7 @@ docker="curl -L get.docker.com -o docker.sh"
 
 #mengecek ngecek
 
+clear
 echo "Tes internet"
 ping -c 1 google.com > /dev/null 2>&1
   if [ "$?" != 0 ];
