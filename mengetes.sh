@@ -3,9 +3,6 @@
 #variabel
 
 docker="curl -L get.docker.com -o docker.sh"
-host1="127.0.0.1"
-host2="0.0.0.0"
-username="root"
 q="mysql"
 
 #mengecek ngecek
@@ -69,7 +66,7 @@ echo "isi Formulir duls gan :'v"
 echo "*isi yang perlu aja"
 echo ""
 read -p "Nama (web & wp) -> " nama
-read -p "Password database (db) -> " pass pass1
+read -p "Password database (db) -> " pass
 read -p "Nama Database (db) -> " namadb
 read -p "Nama image Ex. john:1.0 (web) -> " namaimage
 read -p "Port Web (web) -> " portweb
@@ -109,7 +106,7 @@ case $wh in
 	echo "Bikin Databasenya gan :'v"
 	echo " wait"
 	sleep 60
-	docker exec -it $nama\_db mysql -h 127.0.0.1 -P 3306 -u root -p$pass1 -e "CREATE DATABASE "$namadb";"
+	docker exec -it $nama\_db $q -h 127.0.0.1 -P 3306 -u root -p$pass -e "CREATE DATABASE "$namadb";"
 	echo ""
 	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
