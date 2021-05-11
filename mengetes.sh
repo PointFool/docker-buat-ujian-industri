@@ -3,7 +3,7 @@
 #variabel
 
 docker="curl -L get.docker.com -o docker.sh"
-q="mysql"
+ip="hostname -I"
 
 #mengecek ngecek
 
@@ -49,7 +49,7 @@ echo " ====WELCOME===="
 echo ""
 echo "  Script Docker"
 echo "  Ujian industri"
-echo "   by : PointFool"
+echo "  by : PointFool"
 echo ""
 echo " ==============="
 echo ""
@@ -66,12 +66,14 @@ echo "isi Formulir duls gan :'v"
 echo "*isi yang perlu aja"
 echo ""
 echo "Wordpress & Database"
+echo "--------------------"
 read -p "Nama -> " namawp
 read -p "Password database -> " pass
 read -p "Nama Database -> " namadb
 read -p "port Wordpress -> " portwp
 echo ""
-echo "Web"
+echo "        Web"
+echo "--------------------"
 read -p "Nama -> " namaweb
 read -p "Nama image Ex. john:1.0 -> " namaimage
 read -p "Port Web -> " portweb
@@ -87,6 +89,7 @@ case $wh in
 	sh docker.sh
 	echo " Done "
 	sleep 2
+	clear
 ;;
 
 2)
@@ -115,6 +118,8 @@ case $wh in
 	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
 	sleep 2
+	echo "akses :" $ip:$portwp
+	echo ""
 ;;
 
 3)
@@ -153,6 +158,10 @@ case $wh in
 	docker start $namaweb\_web
 	echo "done"
 	sleep 2
+	clear
+	echo "akses :" $ip:$portweb
+	echo ""
+	
 ;;
 
 *)
