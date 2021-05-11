@@ -3,7 +3,6 @@
 #variabel
 
 docker="curl -L get.docker.com -o docker.sh"
-host="127.0.0.1"
 username="root"
 
 #mengecek ngecek
@@ -105,7 +104,7 @@ case $wh in
 	sleep 2
 	echo ""
 	echo "Bikin Databasenya gan :'v"
-	docker exec -it $nama\_db mysql -u$username -p$pass -e "CREATE DATABASE "$namadb";"
+	docker exec -it $nama\_db mysql -u $username -p$pass -e "CREATE DATABASE "$namadb";"
 	echo "done"
 	sleep 2
 ;;
