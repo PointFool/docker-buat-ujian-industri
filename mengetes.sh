@@ -134,21 +134,25 @@ case $wh in
 	echo "done"
 	sleep 2
 	echo ""
-	echo "bikin Dockerfile"
+	echo "Bikin Dockerfile"
 	echo "FROM httpd:latest" >> Dockerfile
 	echo "COPY . /usr/local/apache2/htdocs/" >> Dockerfile
+	echo "Done"
 	sleep 2	
 	echo ""
 	echo "Bikin index.html"
 	echo "BERHASIL GAN!!" >> index.html
+	echo "done"
 	sleep 2
 	echo ""
 	echo "Build image"
 	docker build -t $namaimage .
+	echo "Done"
 	sleep 2
 	echo ""
 	echo "Bikin container web" 
 	docker create --name $namaweb\_web -p $portweb:80 $namaimage
+	echo "Done"
 	sleep 2
 	echo ""
 	echo "start container"
