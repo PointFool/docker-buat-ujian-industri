@@ -100,12 +100,12 @@ case $wh in
 	sleep 2
 	echo ""
 	echo "Buat container Database"
-	docker run --name $nama\_db -e MYSQL_ROOT_PASSWORD=$pass --network network_$nama -d mysql
+	docker run --name $nama\_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=$pass --network network_$nama -d mysql
 	echo "done"
 	sleep 2
 	echo ""
 	echo "Bikin Databasenya gan :'v"
-	docker exec -it $nama\_db mysql -h$host -u$username -p$pass -e "CREATE DATABASE "$namadb";"
+	docker exec -it $nama\_db mysql -u$username -p$pass -e "CREATE DATABASE "$namadb";"
 	echo "done"
 	sleep 2
 ;;
