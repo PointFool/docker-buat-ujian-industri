@@ -3,6 +3,7 @@
 #variabel
 
 docker="curl -L get.docker.com -o docker.sh"
+ip4="/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1"
 
 #mengecek ngecek
 
@@ -117,6 +118,8 @@ case $wh in
 	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
 	sleep 2
+	echo "Akses :" $ip4
+	echo ""
 ;;
 
 3)
@@ -156,6 +159,8 @@ case $wh in
 	echo "done"
 	sleep 2
 	clear
+	echo "Akses :" $ip4
+	echo ""
 	
 ;;
 
