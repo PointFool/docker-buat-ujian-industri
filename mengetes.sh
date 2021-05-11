@@ -118,7 +118,7 @@ case $wh in
 	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
 	sleep 2
-	echo "Akses :" $ip4
+	echo "Akses :" $ip4:$portwp
 	echo ""
 ;;
 
@@ -159,7 +159,7 @@ case $wh in
 	echo "done"
 	sleep 2
 	clear
-	echo "Akses :" $ip4
+	echo "Akses :" $ip4:$portweb
 	echo ""
 	
 ;;
