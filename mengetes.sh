@@ -107,6 +107,8 @@ case $wh in
 	sleep 2
 	echo ""
 	echo "Bikin Databasenya gan :'v"
+	echo " wait"
+	sleep 60
 	sudo docker exec -it $nama\_db $q -h $host1 -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
 	sudo docker exec -it $nama\_db $q -h $host2 -P 3306 -u $username -p$pass -e "CREATE DATABASE "$namadb";"
 	echo ""
