@@ -82,47 +82,59 @@ case $wh in
 
 2)
 	echo "Wordpress & Database"
+	echo ""
 	echo "Buat Network"
 	docker network create network_$nama
 	echo "done"
 	sleep 2
+	echo ""
 	echo "Buat container Wordpress"
 	docker run --name $nama\_wp -p $portwp:80 --network network_$nama -d wordpress
 	echo "done"
 	sleep 2
+	echo ""
 	echo "Buat container Database"
 	docker run --name $nama\_db -e MYSQL_ROOT_PASSWORD=$pass --network network_$nama -d mysql
 	echo "done"
 	sleep 2
+	echo ""
 	echo "bikin databasenya manual ya :'v"
 	echo "Nama : " $nama\_db
+	sleep 2
 ;;
 
 3)
 	echo "Bikin Web"
+	echo ""
 	sleep 2
 	echo "Download httpd"
 	docker pull httpd
 	echo "done"
 	sleep 2
+	echo ""
 	echo "Bikin Folder"
 	mkdir $nama\_web
 	cd $nama\_web/
 	echo "done"
 	sleep 2
+	echo ""
 	echo "bikin Dockerfile"
 	echo "FROM httpd:latest" >> Dockerfile
 	echo "COPY . /usr/local/apache2/htdocs/" >> Dockerfile
 	sleep 2	
+	echo ""
 	echo "Bikin index.html"
 	echo "BERHASIL GAN!!" >> index.html
 	sleep 2
+	echo ""
 	echo "Build image"
 	docker build -t $namaimage .
 	sleep 2
+	echo ""
 	echo "Bikin container web" 
 	docker create --name $nama\_web -p $portweb:80 $namaimage
 	sleep 2
+	echo ""
 	echo "start container"
 	docker start $nama\_web
 	echo "done"
