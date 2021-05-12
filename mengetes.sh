@@ -160,7 +160,7 @@ case $wh in
 	echo "done"
 	sleep 2
 	clear
-	echo "heel : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1)"
+	echo "heel : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1) \: ${portweb}"
 
 ;;
 
