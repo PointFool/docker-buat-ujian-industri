@@ -114,8 +114,8 @@ case $wh in
 	sleep 75
 	docker exec -it $namawp\_db mysql -h 127.0.0.1 -P 3306 -u root -p$pass -e "CREATE DATABASE "$namadb";"
 	echo ""
-	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
+	echo ""
 	echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}"
 	sleep 2
 	echo ""
