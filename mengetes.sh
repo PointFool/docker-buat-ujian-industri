@@ -118,6 +118,7 @@ case $wh in
 	echo "kalo error bikin manual aja"
 	echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}"
 	sleep 2
+	echo ""
 ;;
 
 3)
@@ -160,9 +161,8 @@ case $wh in
 	docker start $namaweb\_web
 	echo "done"
 	sleep 2
-	clear
 	echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portweb}"
-
+	echo ""
 ;;
 
 *)
