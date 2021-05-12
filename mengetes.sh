@@ -116,6 +116,7 @@ case $wh in
 	echo ""
 	echo "Masih beta :'v"
 	echo "kalo error bikin manual aja"
+	echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}"
 	sleep 2
 ;;
 
@@ -160,7 +161,7 @@ case $wh in
 	echo "done"
 	sleep 2
 	clear
-	echo "heel : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1) \: ${portweb}"
+	echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portweb}"
 
 ;;
 
