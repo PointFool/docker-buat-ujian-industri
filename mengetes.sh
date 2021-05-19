@@ -123,7 +123,7 @@ read -p "pilih -> " pilih
 	    echo "Bikin Folder";
 	    mkdir $namaweb\_web
 	    cd $namaweb\_web/
-	    echo "done";
+	    echo "Done";
 	    sleep 2
 	    echo ""
 	    echo "Bikin Dockerfile";
