@@ -97,9 +97,9 @@ read -p "pilih -> " pilih
         sleep 2
         read -p "Kembali ke menu? [Y/N] : " pilih
             if [ $pilih = "y" ]; then
-                sh mengetes.sh
+                ./mengetes.sh
             elif [ $pilih = "Y" ]; then
-                sh mengetes.sh
+                ./mengetes.sh
             else
                 exit 1
     fi
@@ -154,9 +154,9 @@ read -p "pilih -> " pilih
 	    echo ""
         read -p "Kembali ke menu? [Y/N] : " pilih2
             if [ $pilih2 = "y" ]; then
-                sh mengetes.sh
+                ./mengetes.sh
             elif [ $pilih2 = "Y" ]; then
-                sh mengetes.sh
+                ./mengetes.sh
             else
                 exit 1
     fi
@@ -199,7 +199,7 @@ read -p "pilih -> " pilih
             if [ $pilih3 = "y" ]; then
                 ./mengetes.sh
             elif [ $pilih3 = "Y" ]; then
-                sh mengetes.sh
+                ./mengetes.sh
             else
                 exit 1
     fi
