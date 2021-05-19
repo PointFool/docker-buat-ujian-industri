@@ -91,7 +91,7 @@ read -p "pilih -> " choice
         echo "install docker";
         echo ""
         $docker
-        sh docker.sh
+	#sh docker.sh
         echo "Done";
         sleep 2
         read -p "Kembali ke menu? [Y/N] : " pilih
