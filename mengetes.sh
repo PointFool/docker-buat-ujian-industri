@@ -197,7 +197,7 @@ read -p "pilih -> " pilih
 	    echo ""
         read -p "Kembali ke menu? [Y/N] : " pilih3
             if [ $pilih3 = "y" ]; then
-                sh mengetes.sh
+                ./mengetes.sh
             elif [ $pilih3 = "Y" ]; then
                 sh mengetes.sh
             else
