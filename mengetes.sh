@@ -96,10 +96,10 @@ read -p "pilih -> " pilih
 	sh docker.sh
         echo "Done";
         sleep 2
-        read -p "Kembali ke menu? [Y/N] : " pilih
-            if [ $pilih = "y" ]; then
+        read -p "Kembali ke menu? [Y/N] : " pilih1
+            if [ $pilih1 = "y" ]; then
                 ./mengetes.sh
-            elif [ $pilih = "Y" ]; then
+            elif [ $pilih1 = "Y" ]; then
                 ./mengetes.sh
             else
                 exit 1
