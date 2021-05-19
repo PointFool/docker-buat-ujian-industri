@@ -9,7 +9,7 @@ docker="curl -L get.docker.com -o docker.sh"
 clear
 if [[ $EUID -ne 0 ]]; then
         echo  "Harus sudo su dulu!!!";
-#        exit 1
+        exit 1
 fi
 
 if [ $(id -u) != "0" ]; then
@@ -32,6 +32,7 @@ else
 
 fi
 
+echo ""
 echo "Tes internet"
 ping -c 1 google.com > /dev/null 2>&1
   if [ "$?" != 0 ];
@@ -95,9 +96,9 @@ read -p "pilih -> " choice
         echo "Done";
         sleep 2
         read -p "Kembali ke menu? [Y/N] : " pilih
-            if [ $pilih = "y"]; then
+            if [ $pilih = "y" ]; then
                 sh mengetes.sh
-            elif [ $pilih = "Y"]; then
+            elif [ $pilih = "Y" ]; then
                 sh mengetes.sh
             else
                 exit 1
@@ -152,10 +153,10 @@ read -p "pilih -> " choice
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portweb}";
 	    echo ""
         read -p "Kembali ke menu? [Y/N] : " pilih2
-            if [ $pilih2 = "y"]; then
-                bash mengetes.sh
-            elif [ $pilih2 = "Y"]; then
-                bash mengetes.sh
+            if [ $pilih2 = "y" ]; then
+                sh mengetes.sh
+            elif [ $pilih2 = "Y" ]; then
+                sh mengetes.sh
             else
                 exit 1
     fi
@@ -165,7 +166,7 @@ read -p "pilih -> " choice
 	    echo ""
 	    read -p "Nama : " namawp
 	    read -p "Port : " portwp
-	    read -p "Password database : " pasd
+	    read -p "Password database : " pass
 	    read -p "Nama database : " namadb
 	    clear
 	    echo "Start";
@@ -195,10 +196,10 @@ read -p "pilih -> " choice
 	    sleep 2
 	    echo ""
         read -p "Kembali ke menu? [Y/N] : " pilih3
-            if [ $pilih3 = "y"]; then
-                bash mengetes.sh
-            elif [ $pilih3 = "Y"]; then
-                bash mengetes.sh
+            if [ $pilih3 = "y" ]; then
+                sh mengetes.sh
+            elif [ $pilih3 = "Y" ]; then
+                sh mengetes.sh
             else
                 exit 1
     fi
