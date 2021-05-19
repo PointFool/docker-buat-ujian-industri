@@ -84,6 +84,7 @@ echo ""
 echo "1) Install Docker";
 echo "2) Bikin web";
 echo "3) Bikin Wordpress & Database";
+echo "4) Exit";
 echo ""
 read -p "pilih -> " pilih
 
@@ -202,5 +203,11 @@ read -p "pilih -> " pilih
                 ./mengetes.sh
             else
                 exit 1
+    fi
+    
+    elif [ $pilih = "0" ]; then
+    	echo "thx bro~";
+	exit 1
+	echo ""
     fi
     fi
