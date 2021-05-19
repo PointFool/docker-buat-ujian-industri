@@ -84,7 +84,7 @@ echo ""
 echo "1) Install Docker";
 echo "2) Bikin web";
 echo "3) Bikin Wordpress & Database";
-echo "4) Exit";
+echo "0) Exit";
 echo ""
 read -p "pilih -> " pilih
 
@@ -207,7 +207,7 @@ read -p "pilih -> " pilih
     
     elif [ $pilih = "0" ]; then
     	echo "thx bro~";
+	sleep 2
 	exit 1
-	echo ""
     fi
     fi
