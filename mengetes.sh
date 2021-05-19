@@ -206,6 +206,7 @@ read -p "pilih -> " pilih
     fi
     
     elif [ $pilih = "0" ]; then
+    	clear
     	echo "thx bro~";
 	sleep 2
 	exit 1
