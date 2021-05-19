@@ -155,9 +155,9 @@ read -p "pilih -> " pilih
 	    echo ""
         read -p "Kembali ke menu? [Y/N] : " pilih2
             if [ $pilih2 = "y" ]; then
-                ./mengetes.sh
+                cd .. && ./mengetes.sh
             elif [ $pilih2 = "Y" ]; then
-                ./mengetes.sh
+                cd .. && ./mengetes.sh
             else
                 exit 1
     fi
@@ -209,5 +209,4 @@ read -p "pilih -> " pilih
     	echo "thx bro~";
 	sleep 2
 	exit 1
-    fi
     fi
