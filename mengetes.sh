@@ -85,9 +85,9 @@ echo "1) Install Docker";
 echo "2) Bikin web";
 echo "3) Bikin Wordpress & Database";
 echo ""
-read -p "pilih -> " choice
+read -p "pilih -> " pilih
 
-    if [ $choice = 1 ]; then
+    if [ $pilih = 1 ]; then
         clear
         echo "install docker";
         echo ""
