@@ -9,7 +9,7 @@ docker="curl -L get.docker.com -o docker.sh"
 clear
 if [[ $EUID -ne 0 ]]; then
         echo  "Harus sudo su dulu!!!";
-        exit 1
+#        exit 1
 fi
 
 if [ $(id -u) != "0" ]; then
