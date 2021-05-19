@@ -96,9 +96,9 @@ read -p "pilih -> " choice
         sleep 2
         read -p "Kembali ke menu? [Y/N] : " pilih
             if [ $pilih = "y"]; then
-                bash mengetes.sh
+                sh mengetes.sh
             elif [ $pilih = "Y"]; then
-                bash mengetes.sh
+                sh mengetes.sh
             else
                 exit 1
     fi
