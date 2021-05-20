@@ -111,12 +111,13 @@ read -p "pilih -> " pilih
 	    read -p "Nama : " namaweb
 	    read -p "Port web : " portweb
 	    read -p "Nama image ex. vivid:1.0 : " namaimage
+	    read -p "Image dan tag image : " namaimg
 	    clear
 	    echo "Start";
 	    echo ""
 	    sleep 2
 	    echo "Download httpd";
-	    docker pull httpd
+	    docker pull $namaimg
 	    echo "Done";
 	    sleep 2
 	    echo ""
@@ -127,13 +128,29 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Bikin Dockerfile";
-	    echo "FROM httpd:latest" >> Dockerfile
+	    echo "FROM ${namaimg}" >> Dockerfile
 	    echo "COPY . /usr/local/apache2/htdocs/" >> Dockerfile
 	    echo "Done";
 	    sleep 2	
 	    echo ""
 	    echo "Bikin index.html";
-	    echo "BERHASIL GAN!!" >> index.html
+	    echo ""
+	    read -p "Tulis sesuatu : " isi
+	    echo ""
+	    echo "<!doctype html>" >> index.html
+	    echo "<html>" >> index.html
+	    echo "<head>" >> index.html
+	    echo "" >> index.html
+	    echo "<title>" >> index.html
+	    echo "${namaweb}" >> index.html
+	    echo "</title>" >> index.html
+	    echo "</head>" >> index.html
+	    echo "" >> index.html
+	    echo "<body>" >> index.html
+	    echo "<p>${isi}</p>" >> index.html
+	    echo "</body>" >> index.html
+	    echo "" >> index.html
+	    echo "</html>" >> index.html
 	    echo "Done";
 	    sleep 2
 	    echo ""
@@ -167,8 +184,11 @@ read -p "pilih -> " pilih
 	    echo ""
 	    read -p "Nama : " namawp
 	    read -p "Port : " portwp
+	    read -p "Tag Wordpress : " wp
+	    read -p "Tag Mysql : " db
 	    read -p "Password database : " pass
 	    read -p "Nama database : " namadb
+	    
 	    clear
 	    echo "Start";
 	    echo "Buat Network";
@@ -177,19 +197,19 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Buat container Wordpress";
-	    docker run --name $namawp\_wp -p $portwp:80 --network network_$namawp -d wordpress
+	    docker run --name $namawp\_wp -p $portwp:80 --network network_$namawp -d wordpress:$wp
 	    echo "Done";
 	    sleep 2
 	    echo ""
 	    echo "Buat container Database";
-	    docker run --name $namawp\_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=$pass --network network_$namawp -d mysql
+	    docker run --name $namawp\_db -e MYSQL_ROOT_PASSWORD=$pass --network network_$namawp -d mysql:$db
 	    echo "Done";
 	    sleep 2
 	    echo ""
 	    echo "Bikin Databasenya gan :'v";
 	    echo "[!]Tunggu[!]";
 	    sleep 75
-	    docker exec -it $namawp\_db mysql -h 127.0.0.1 -P 3306 -u root -p$pass -e "CREATE DATABASE "$namadb";"
+	    docker exec -it $namawp\_db mysql -u root -p$pass -e "CREATE DATABASE "$namadb";"
 	    echo ""
 	    echo "kalo error bikin manual aja";
 	    echo ""
