@@ -186,7 +186,7 @@ read -p "pilih -> " pilih
 	    read -p "Port : " portwp
 	    read -p "Tag Wordpress : " wp
 	    read -p "Tag Mysql : " db
-	    read -p "Password database : " pass
+	    read -p "Password mysql : " pass
 	    read -p "Nama database : " namadb
 	    
 	    clear
