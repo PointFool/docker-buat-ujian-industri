@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#variabel
-
-docker="curl -L get.docker.com -o docker.sh"
-
 #mengecek ngecek
 
 clear
