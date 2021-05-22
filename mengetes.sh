@@ -92,8 +92,7 @@ read -p "pilih -> " pilih
         clear
         echo "install docker";
         echo ""
-        $docker
-	sh docker.sh
+	curl -fsSL get.docker.com | sh
         echo "Done";
         sleep 2
         read -p "Kembali ke menu? [Y/N] : " pilih1
