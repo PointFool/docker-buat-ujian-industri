@@ -184,8 +184,8 @@ read -p "pilih -> " pilih
 	    echo ""
 	    read -p "Nama : " namawp
 	    read -p "Port : " portwp
-	    read -p "Tag Wordpress : " wp
-	    read -p "Tag Mysql : " db
+	    read -p "Wordpress:tag : " wp
+	    read -p "Mysql:tag : " db
 	    read -p "Password mysql : " pass
 	    read -p "Nama database : " namadb
 	    
@@ -197,22 +197,13 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Buat container Wordpress";
-	    docker run --name $namawp\_wp -p $portwp:80 --network network_$namawp -d wordpress:$wp
+	    docker run --name $namawp\_wp -p $portwp:80 --network network_$namawp -d $wp
 	    echo "Done";
 	    sleep 2
 	    echo ""
 	    echo "Buat container Database";
-	    docker run --name $namawp\_db -e MYSQL_ROOT_PASSWORD=$pass --network network_$namawp -d mysql:$db
+	    docker run --name $namawp\_db -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$namadb--network network_$namawp -d $db
 	    echo "Done";
-	    sleep 2
-	    echo ""
-	    echo "Bikin Databasenya gan :'v";
-	    echo "[!]Tunggu[!]";
-	    sleep 75
-	    docker exec -it $namawp\_db mysql -u root -p$pass -e "CREATE DATABASE "$namadb";"
-	    echo ""
-	    echo "kalo error bikin manual aja";
-	    echo ""
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}";
 	    sleep 2
 	    echo ""
