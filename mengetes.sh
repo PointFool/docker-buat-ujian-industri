@@ -202,7 +202,7 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Buat container Database";
-	    docker run --name $namawp\_db -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$namadb--network network_$namawp -d $db
+	    docker run --name $namawp\_db -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$namadb --network network_$namawp -d $db
 	    echo "Done";
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}";
 	    sleep 2
