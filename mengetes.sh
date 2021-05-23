@@ -117,8 +117,8 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Bikin Folder";
-	    mkdir $namaweb\_web
-	    cd $namaweb\_web/
+	    mkdir $namaweb
+	    cd $namaweb/
 	    echo "Done";
 	    sleep 2
 	    echo ""
@@ -155,12 +155,12 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Bikin container web";
-	    docker create --name $namaweb\_web -p $portweb:80 $namaimage
+	    docker create --name $namaweb -p $portweb:80 $namaimage
 	    echo "Done";
 	    sleep 2
 	    echo ""
 	    echo "start container";
-	    docker start $namaweb\_web
+	    docker start $namaweb
 	    echo "Done";
 	    sleep 2
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portweb}";
@@ -192,12 +192,12 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Buat container Wordpress";
-	    docker run --name $namawp\_wp -p $portwp:80 --network network_$namawp -d $wp
+	    docker run --name $namawp -p $portwp:80 --network network_$namawp -d $wp
 	    echo "Done";
 	    sleep 2
 	    echo ""
 	    echo "Buat container Database";
-	    docker run --name $namawp\_db -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$namadb --network network_$namawp -d $db
+	    docker run --name $namadb -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$namadb --network network_$namawp -d $db
 	    echo "Done";
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}";
 	    sleep 2
