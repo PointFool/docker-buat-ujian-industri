@@ -105,8 +105,8 @@ read -p "pilih -> " pilih
 	    echo ""
 	    read -p "Nama : " namaweb
 	    read -p "Port web : " portweb
+	    read -p "Image:tag ex. httpd:tag : " namaimg
 	    read -p "Nama image ex. vivid:1.0 : " namaimage
-	    read -p "Image dan tag image : " namaimg
 	    clear
 	    echo "Start";
 	    echo ""
