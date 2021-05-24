@@ -177,12 +177,13 @@ read -p "pilih -> " pilih
     elif [ $pilih = 3 ]; then
 	    echo "Wordpress & Database";
 	    echo ""
-	    read -p "Nama : " namawp
+	    read -p "Nama Wordpress : " namawp
+	    read -p "Nama db : " namadb
 	    read -p "Port : " portwp
 	    read -p "Wordpress:tag : " wp
 	    read -p "Mysql:tag : " db
 	    read -p "Password mysql : " pass
-	    read -p "Nama database : " namadb
+	    read -p "Isi database : " isidb
 	    
 	    clear
 	    echo "Start";
@@ -197,7 +198,7 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Buat container Database";
-	    docker run --name $namadb -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$namadb --network network_$namawp -d $db
+	    docker run --name $namadb -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$isidb --network network_$namawp -d $db
 	    echo "Done";
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}";
 	    sleep 2
