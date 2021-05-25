@@ -190,12 +190,12 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Buat container Wordpress";
-	    docker run --name $namawp -p $portwp:80 --network network_$namawp -d $wp
+	    docker run --name $namawp -p $portwp:80 --network $namanet -d $wp
 	    echo "Done";
 	    sleep 2
 	    echo ""
 	    echo "Buat container Database";
-	    docker run --name $namadb -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$isidb --network network_$namawp -d $db
+	    docker run --name $namadb -e MYSQL_ROOT_PASSWORD=$pass -e MYSQL_DATABASE=$isidb --network $namanet -d $db
 	    echo "Done";
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}";
 	    sleep 2
