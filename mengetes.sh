@@ -155,12 +155,7 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo ""
 	    echo "Bikin container web";
-	    docker create --name $namaweb -p $portweb:80 $namaimage
-	    echo "Done";
-	    sleep 2
-	    echo ""
-	    echo "start container";
-	    docker start $namaweb
+	    docker run -dit --name $namaweb -p $portweb:80 $namaimage
 	    echo "Done";
 	    sleep 2
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portweb}";
