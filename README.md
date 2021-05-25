@@ -1,7 +1,7 @@
 # docker buat ujian industri
-masih banyak kekurangan dalam pembuatan script ini XD
+Masih banyak kekurangan dalam pembuatan script ini XD
 
-download duls
+Download duls
 
     git clone https://github.com/PointFool/docker-buat-ujian-industri.git
   
@@ -9,7 +9,7 @@ download duls
   
     chmod +x mengetes.sh
 
-jalanin gan
+Jalanin gan
 
     ./mengetes.sh
   
