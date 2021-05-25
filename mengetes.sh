@@ -111,12 +111,13 @@ read -p "pilih -> " pilih
 	    echo "Start";
 	    echo ""
 	    sleep 2
-	    echo "Download httpd";
+	    echo "Download image";
 	    docker pull $namaimg
 	    echo "Done";
 	    sleep 2
 	    echo ""
 	    echo "Bikin Folder";
+	    cd ..
 	    mkdir $namaweb
 	    cd $namaweb/
 	    echo "Done";
@@ -162,9 +163,9 @@ read -p "pilih -> " pilih
 	    echo ""
         read -p "Kembali ke menu? [Y/N] : " pilih2
             if [ $pilih2 = "y" ]; then
-                cd .. && ./mengetes.sh
+                cd docker-buat-ujian-industri/ && ./mengetes.sh
             elif [ $pilih2 = "Y" ]; then
-                cd .. && ./mengetes.sh
+                cd docker-buat-ujian-industri/ && ./mengetes.sh
             else
                 exit 1
     fi
