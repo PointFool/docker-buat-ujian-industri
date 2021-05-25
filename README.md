@@ -1,4 +1,4 @@
-# docker buat ujian industri
+# Docker buat ujian industri
 Masih banyak kekurangan dalam pembuatan script ini XD
 
 Download duls
