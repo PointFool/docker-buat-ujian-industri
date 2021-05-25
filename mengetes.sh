@@ -175,6 +175,7 @@ read -p "pilih -> " pilih
 	    echo ""
 	    read -p "Nama container Wordpress : " namawp
 	    read -p "Nama container db : " namadb
+	    read -p "Nama network :" namanet
 	    read -p "Port wordpress : " portwp
 	    read -p "Wordpress:tag : " wp
 	    read -p "Mysql:tag : " db
@@ -184,7 +185,7 @@ read -p "pilih -> " pilih
 	    clear
 	    echo "Start";
 	    echo "Buat Network";
-	    docker network create network_$namawp
+	    docker network create $namanet
 	    echo "Done";
 	    sleep 2
 	    echo ""
