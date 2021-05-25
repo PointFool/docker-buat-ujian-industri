@@ -103,7 +103,7 @@ read -p "pilih -> " pilih
     elif [ $pilih = 2 ]; then
         echo "Bikin Web"
 	    echo ""
-	    read -p "Nama : " namaweb
+	    read -p "Nama container : " namaweb
 	    read -p "Port web : " portweb
 	    read -p "Image:tag ex. httpd:tag : " namaimg
 	    read -p "Nama image ex. vivid:1.0 : " namaimage
@@ -173,13 +173,13 @@ read -p "pilih -> " pilih
     elif [ $pilih = 3 ]; then
 	    echo "Wordpress & Database";
 	    echo ""
-	    read -p "Nama Wordpress : " namawp
-	    read -p "Nama db : " namadb
-	    read -p "Port : " portwp
+	    read -p "Nama container Wordpress : " namawp
+	    read -p "Nama container db : " namadb
+	    read -p "Port wordpress : " portwp
 	    read -p "Wordpress:tag : " wp
 	    read -p "Mysql:tag : " db
 	    read -p "Password mysql : " pass
-	    read -p "Isi database : " isidb
+	    read -p "Nama database : " isidb
 	    
 	    clear
 	    echo "Start";
