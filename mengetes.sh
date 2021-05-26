@@ -227,7 +227,7 @@ read -p "pilih -> " pilih
 	echo "   gateway4: ${gt}" >> /etc/netplan/00-installer-config.yaml
 	echo "   nameservers:" >> /etc/netplan/00-installer-config.yaml
 	echo "    addresses: [${srv}]" >> /etc/netplan/00-installer-config.yaml
-	echo "  version: 2" >> /etc/netplan/00-installer-config.yaml
+	echo " version: 2" >> /etc/netplan/00-installer-config.yaml
 	echo "applying"
 	netplan apply
 	echo "cek"
