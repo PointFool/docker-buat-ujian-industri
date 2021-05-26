@@ -214,7 +214,6 @@ read -p "pilih -> " pilih
     	echo "Setting IP";
 	echo ""
 	echo "backup file original";
-	cd d
 	mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.bak
 	echo ""
 	read -p "IP : " ip
