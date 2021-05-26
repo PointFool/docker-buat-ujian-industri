@@ -132,14 +132,14 @@ read -p "pilih -> " pilih
 	    echo ""
 	    echo "Bikin index.html";
 	    echo ""
+	    read -p "title : " title
 	    read -p "Tulis sesuatu : " isi
 	    echo ""
-	    echo "<!doctype html>" >> index.html
 	    echo "<html>" >> index.html
 	    echo "<head>" >> index.html
 	    echo "" >> index.html
 	    echo "<title>" >> index.html
-	    echo "${namaweb}" >> index.html
+	    echo "${title}" >> index.html
 	    echo "</title>" >> index.html
 	    echo "</head>" >> index.html
 	    echo "" >> index.html
