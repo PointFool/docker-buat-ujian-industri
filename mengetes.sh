@@ -230,7 +230,9 @@ read -p "pilih -> " pilih
 	echo " version: 2" >> /etc/netplan/00-installer-config.yaml
 	echo "applying"
 	netplan apply
+	echo ""
 	echo "cek"
+	sleep 2
 	ip a show enp0s3
 	echo ""
 	echo "Done"
