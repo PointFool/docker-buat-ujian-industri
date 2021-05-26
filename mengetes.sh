@@ -80,6 +80,7 @@ echo ""
 echo "1) Install Docker";
 echo "2) Bikin web";
 echo "3) Bikin Wordpress & Database";
+echo "4) Setting IP";
 echo "0) Exit";
 echo ""
 read -p "pilih -> " pilih
@@ -161,7 +162,7 @@ read -p "pilih -> " pilih
 	    sleep 2
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portweb}";
 	    echo ""
-        read -p "Kembali ke menu? [Y/N] : " pilih2
+            read -p "Kembali ke menu? [Y/N] : " pilih2
             if [ $pilih2 = "y" ]; then
                 cd .. && cd docker-buat-ujian-industri/ && ./mengetes.sh
             elif [ $pilih2 = "Y" ]; then
@@ -200,7 +201,40 @@ read -p "pilih -> " pilih
 	    echo "Akses : $(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1):${portwp}";
 	    sleep 2
 	    echo ""
-        read -p "Kembali ke menu? [Y/N] : " pilih3
+	    read -p "Kembali ke menu? [Y/N] : " pilih3
+            if [ $pilih3 = "y" ]; then
+                ./mengetes.sh
+            elif [ $pilih3 = "Y" ]; then
+                ./mengetes.sh
+            else
+                exit 1
+    fi
+    
+    elif [ $pilih = 4 ]; then
+    	echo "Setting IP";
+	echo ""
+	echo "backup file original";
+	mv /etc/netplan/00-installer-config.yaml /ect/netplan/00-installer-config.yaml.bak
+	echo ""
+	read -p "IP : " ip
+	read -p "Gateway : " gt
+	read -p "Nameservers : " srv
+	echo ""
+	echo "network:" >> 00-installer-config.yaml
+	echo " ethernets:" >> 00-installer-config.yaml
+	echo "  enp0s3:" >> 00-installer-config.yaml
+	echo "   addresses: [${ip}]" >> 00-installer-config.yaml
+	echo "   gateway4: ${gt}" >> 00-installer-config.yaml
+	echo "   nameservers:" >> 00-installer-config.yaml
+	echo "    addresses: [${srv}]" >> 00-installer-config.yaml
+	echo "  version 2" >> 00-installer-config.yaml
+	echo "applying"
+	netplan apply
+	echo "cek"
+	ip a show enp0s3
+	echo ""
+	echo "Done"
+	read -p "Kembali ke menu? [Y/N] : " pilih3
             if [ $pilih3 = "y" ]; then
                 ./mengetes.sh
             elif [ $pilih3 = "Y" ]; then
