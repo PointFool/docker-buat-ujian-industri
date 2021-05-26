@@ -214,20 +214,21 @@ read -p "pilih -> " pilih
     	echo "Setting IP";
 	echo ""
 	echo "backup file original";
+	cd d
 	mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.bak
 	echo ""
 	read -p "IP : " ip
 	read -p "Gateway : " gt
 	read -p "Nameservers : " srv
 	echo ""
-	echo "network:" >> 00-installer-config.yaml
-	echo " ethernets:" >> 00-installer-config.yaml
-	echo "  enp0s3:" >> 00-installer-config.yaml
-	echo "   addresses: [${ip}]" >> 00-installer-config.yaml
-	echo "   gateway4: ${gt}" >> 00-installer-config.yaml
-	echo "   nameservers:" >> 00-installer-config.yaml
-	echo "    addresses: [${srv}]" >> 00-installer-config.yaml
-	echo "  version 2" >> 00-installer-config.yaml
+	echo "network:" >> /etc/netplan/00-installer-config.yaml
+	echo " ethernets:" >> /etc/netplan/00-installer-config.yaml
+	echo "  enp0s3:" >> /etc/netplan/00-installer-config.yaml
+	echo "   addresses: [${ip}]" >> /etc/netplan/00-installer-config.yaml
+	echo "   gateway4: ${gt}" >> /etc/netplan/00-installer-config.yaml
+	echo "   nameservers:" >> /etc/netplan/00-installer-config.yaml
+	echo "    addresses: [${srv}]" >> /etc/netplan/00-installer-config.yaml
+	echo "  version 2" >> /etc/netplan/00-installer-config.yaml
 	echo "applying"
 	netplan apply
 	echo "cek"
